@@ -1,0 +1,6 @@
+<p> Deseja mesmo remover a referência 
+{{ranking.nome}} do banco?</p> 
+<form method="POST"> 
+ {% csrf_token %}
+ <button type="submit">Remover</button> 
+</form>

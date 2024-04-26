@@ -1,0 +1,152 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Atividade01-Genesis Evangelista</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+  </head>
+
+    <body>
+    <div class="div-pagina"> 
+
+      <div class="container">
+      <h1 id="title-center"> TREM DO CORCOVADO </h1>
+
+
+      <hr>
+      <h3 id="name-center"> {{nome}} </h3>
+      <hr>
+
+
+
+
+      <h2 id="titulo_paragrafo"><u>Sobre a Empresa: </u></h2>
+
+      <div class="all-center">
+
+      <p><br>
+        O <b>Trem do Corcovado</b> é uma empresa da área do turismo que atua em uma ferrovia com      algumas peculiaridades quando comparada com outras ferrovias mundo a fora.
+       Um ponto de destaque é seu trceiro trilho que é um sistema de cremalheiras, onde ocorre a sua tração e também a frenagem.</p></div>
+        <div class="all-center">
+      <p>Outro ponto importante é a inclinação que o trem vence para chegar ao seu destino. E, por fim e tão importante quanto, é o cenário vislumbrante da cidade do Rio de Janeiro!</p></div>
+        <div class="all-center">
+          <img id="imagem1" src="{% static 'images/trem_do_corcovado.jpg' %}" alt="Trem com Cristo ao fundo"> </div>
+
+          <div class="all-center">
+          <img id="imagem2" src="{% static 'images/trem.jpg' %}" alt="Trem, Cristo e Pão de Açúcar"> </div>
+
+
+          <div class="all-center">
+          <img id="imagem3" src="{% static 'images/trilho.jpg' %}" alt="Trilhos do Trem">
+          </div>
+
+        <div class="all-center">
+        <p>Suas pontes centenárias, feitas em estrutura metálica também chamam a atenção. Destacamos ainda a inclinação de até 300% em alguns trechos oque corresponde a um ângulo de mais de 30 graus! Não podemos deixar de citar também o Trem super moderno, o Parque Nacional no qual o circuito está inserido e pra fechar o percurso com chave de ouro, no Alto do Corcovado está o Monumento ao Cristo Redentor!
+      </p></div>
+
+
+      <div class="titlelist">
+        <h2> TREM DO CORCOVADO S.A.</h2> 
+        
+      </div>
+
+
+        <a href="/adc_dado/">
+         ADICIONR RANKING
+        </a>
+       
+
+        
+        <div id="lista-rk" >
+          <ol>
+              
+            {% for el in formulario %}
+              <li>
+                <img class="icones" src={% static el.icone %}  >
+                {{el.nome}}</li>
+              <li><p>{{el.descricao}}</p>
+              </li>
+              <a href="/remover_dado/{{el.id}}">
+                REMOVER RANKING
+              </a>
+              <a href="/editar_dado/{{el.id}}">
+              EDITAR RANKING
+              </a>
+             
+             
+              <ul>               
+                  {% for link in el.link_set.all %}
+                  <li>
+                    <a href={{link.link}}>{{link.nome}}</a>
+                  </li>
+                {% endfor %}
+              </ul>  
+            {% endfor %}   
+          </ol>
+        </div>
+
+     
+
+
+
+      
+
+      <table class="tabela">
+
+        <caption id="titulo_tabela"><b>TREM DO CORCOVADO</b></caption>
+        <thead>
+          <tr>
+            <th>Setor</th>
+            <th>Atribuição</th>
+          </tr>
+        </thead>
+
+          <tr>
+            <td>Oficina </td>
+            <td>Manutenção do Trem </td>
+
+          </tr>
+
+          <tr>
+            <td>Rede Aérea </td>
+            <td>Rede elétrica </td>
+
+          </tr>
+
+          <tr>
+            <td>Via Permanente </td>
+            <td>Via férrea </td>
+          </tr>
+
+          <tr>
+            <td>Bilheteria </td>
+            <td>Venda/tráfego </td>
+
+          </tr>
+
+          <tr>
+            <td>Receptivo </td>
+            <td>Recepção/alocação dos turistas </td>
+
+          </tr>
+
+          <tr>
+            <td>Conservação </td>
+            <td>Manutenção das áreas comuns </td>        
+          </tr>
+
+        <tfoot>
+          <tr>
+            <td colspan="2">Genesis da Silva Evangelista</td>
+          </tr>
+        </tfoot>
+        
+      </table>
+        
+    </div>
+  </body>
+</html>
